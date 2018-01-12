@@ -1,5 +1,5 @@
 # roller-coaster-backend
-This backend is paired with [roller-coaster-front-end]()
+This backend is paired with [react-redux-router-blog-frontend](https://github.com/rogerwschmidt/react-redux-router-blog-frontend)
 
 
 ## To install
@@ -8,7 +8,7 @@ npm install
 
 cp .env.sample .env
 
-createdb roller_coaster_dev
+createdb blog_posts
 
 npm run knex migrate:latest
 
