@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== 'test') {
 app.use(cors())
 app.use(require('body-parser').json())
 
-app.use('/api/rollercoasters', require('./routes/roller_coasters.routes'))
+app.use('/api/blogposts', require('./routes/blog_posts.routes'))
 
 app.use((req, res, next) => {
   const status = 404

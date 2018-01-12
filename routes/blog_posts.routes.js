@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Controller = require(`../controllers/roller_coasters.controller`)
+const Controller = require(`../controllers/blog_posts.controller`)
 
 router.get('/', Controller.index)
 router.get('/:id', Controller.exists, Controller.show)

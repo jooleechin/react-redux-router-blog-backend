@@ -1,5 +1,5 @@
 module.exports = {
   tableNames: {
-    ROLLER_COASTERS: 'roller_coasters'
+    BLOG_POSTS: 'blog_posts'
   }
 }

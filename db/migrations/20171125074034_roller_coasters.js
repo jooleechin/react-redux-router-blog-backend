@@ -1,12 +1,10 @@
-const { tableNames : { ROLLER_COASTERS } } =  require('../../constants')
+const { tableNames : { BLOG_POSTS } } =  require('../../constants')
 
 exports.up = knex => {
-  return knex.schema.createTable(ROLLER_COASTERS, table => {
+  return knex.schema.createTable(BLOG_POSTS, table => {
     table.increments()
-    table.string('name').notNullable()
-    table.text('park').notNullable()
-    table.text('city').notNullable()
-    table.text('state').notNullable()
+    table.string('title').notNullable()
+    table.text('content').notNullable()
     table.timestamps(true, true)
   })
 }
