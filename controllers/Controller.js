@@ -24,7 +24,7 @@ module.exports = name => {
   class Controller {
     static exists (req, res, next) {
       const status = 404
-      const message = `Could not find ${singular} with id of ${req.params.id}`
+      const message = `Could not find ${modelName} with id of ${req.params.id}`
 
       Model.find(req.params.id)
       .then(response => response ? next() : next({ status, message }))
@@ -37,26 +37,27 @@ module.exports = name => {
     }
 
     static show (req, res, next) {
+      console.log(modelName)
       Model.find(req.params.id)
-      .then(response => res.json({ [singular]: response }))
+      .then(response => res.json({ [modelName]: response }))
       .catch(errorHandler(next))
     }
 
     static create (req, res, next) {
       Model.create(req.body)
-      .then(response => res.status(201).json({ [singular]: response }))
+      .then(response => res.status(201).json({ [modelName]: response }))
       .catch(errorHandler(next))
     }
 
     static update (req, res, next) {
       Model.update(req.params.id, req.body)
-      .then(response => res.json({ [singular]: response }))
+      .then(response => res.json({ [modelName]: response }))
       .catch(errorHandler(next))
     }
 
     static destroy (req, res, next) {
       Model.destroy(req.params.id)
-      .then(response => res.json({ [singular]: response }))
+      .then(response => res.json({ [modelName]: response }))
       .catch(errorHandler(next))
     }
   }
