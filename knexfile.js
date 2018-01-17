@@ -1,4 +1,8 @@
-require('dotenv').load()
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').load()
+}
+
 const path = require('path')
 const config = {
   client: 'pg',
