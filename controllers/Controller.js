@@ -1,12 +1,11 @@
 const capitalize = require('lodash/capitalize')
 const pluralize = require('pluralize')
 
-const singular = name.split('_').map((e,i,a) => {
-  if(i === a.length-1) return pluralize.singular(e)
-  return e
-})
-
 module.exports = name => {
+  const singular = name.split('_').map((e,i,a) => {
+    if(i === a.length-1) return pluralize.singular(e)
+    return e
+  })
 
   const modelName = singular.reduce((acc, e) => acc + capitalize(e), '')
 
